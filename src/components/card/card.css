@@ -1,0 +1,21 @@
+.card{
+    /* width: 280px; */
+    border-radius: 15px;;
+    overflow: hidden;
+    transition: all 0.3s;
+    margin: 5px;
+    background-color: #05012e;
+}
+.card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white; 
+}
+.btn-custom {
+  background-color: #05012e; 
+  border: none;
+  color: white;
+}
+
+.btn-custom:hover {
+  background-color: #06001f; 
+}

@@ -1,0 +1,38 @@
+
+.footer {
+    background-color: #343a40; 
+    color: #ffffff; 
+    padding: 10px 0;
+  }
+  
+  .footer h5 {
+    color: #ffc107; 
+    margin-bottom: 15px;
+  }
+  
+  .footer a {
+    color: #ffffff; 
+    text-decoration: none; 
+  }
+  
+  .footer a:hover {
+    color: #ffc107; 
+  }
+  
+  .footer ul {
+    padding-left: 0; 
+  }
+  
+  .footer ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer .fas {
+    margin-right: 10px; 
+    color: #ffc107;
+  }
+  
+  .footer .text-center {
+    border-top: 1px solid #444; 
+    padding-top: 15px;
+  }
