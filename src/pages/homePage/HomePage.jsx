@@ -14,7 +14,7 @@ function HomePage() {
       cardTitle: "News Feed",
       mainContent: "Latest news and updates from around the world.",
       backgroundImage: newsFeed,
-      link: "#",
+      link: "/countries",
     },
     {
       cardTitle: "Popular Topics",

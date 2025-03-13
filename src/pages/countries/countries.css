@@ -1,0 +1,42 @@
+
+.card {
+    transition: transform 0.2s;
+    background-color: rgb(214, 220, 224);
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+.button {
+    background-color: #152016;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: #0d0e0d;
+    color: white;
+    font-size: 18px;
+  }
+  

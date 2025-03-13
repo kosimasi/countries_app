@@ -6,7 +6,8 @@ import HomePage from './pages/homePage/HomePage';
 import PostsPage from './pages/PostsPage';
 import CommentsPage from './pages/CommentsPage';
 import Users from './pages/Users';
-// import HomePage from './pages/homePage/HomePage';
+import Countries from './pages/countries/Countries';
+import CountryDetails from './pages/countries/CountryDetails';
 
 
 const queryClient = new QueryClient();
@@ -20,6 +21,8 @@ function App() {
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/comments" element={<CommentsPage />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/countries" element={<Countries />} />
+          <Route path="/country/:cca3" element={<CountryDetails />} />
         </Routes>
       </Router>
     </QueryClientProvider>
