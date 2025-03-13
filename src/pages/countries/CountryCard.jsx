@@ -1,0 +1,27 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+const CountryCard = ({ country }) => {
+  return (
+    <div className="col-md-3 my-4">
+      <div className="card h-100 text-center">
+        <img
+          src={country.flags.png}
+          alt={`Flag of ${country.name.common}`}
+          className="card-img-top"
+        />
+        <div className="card-body">
+          <h5 className="card-title">{country.name.common}</h5>
+          <p className="card-text">
+            <strong>Capital:</strong> {country.capital?.[0] || "N/A"}
+          </p>
+          <Link to={`/country/${country.cca3}`} className="btn button">
+            View Details
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CountryCard;

@@ -1,0 +1,27 @@
+
+.flag-image {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .alert {
+    margin-top: 2rem;
+  }
+ 

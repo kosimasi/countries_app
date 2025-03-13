@@ -6,7 +6,7 @@ import HomePage from './pages/homePage/HomePage';
 import PostsPage from './pages/PostsPage';
 import CommentsPage from './pages/CommentsPage';
 import Users from './pages/Users';
-import Countries from './pages/countries/Countries';
+import CountriesList from './pages/countries/CountriesList';
 import CountryDetails from './pages/countries/CountryDetails';
 
 
@@ -21,7 +21,7 @@ function App() {
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/comments" element={<CommentsPage />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/countries" element={<Countries />} />
+          <Route path="/countries" element={<CountriesList />} />
           <Route path="/country/:cca3" element={<CountryDetails />} />
         </Routes>
       </Router>
