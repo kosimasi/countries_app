@@ -1,4 +1,7 @@
 
+.container-holder{
+  background-color: #dcf1f1;
+}
 .card {
     transition: transform 0.2s;
     background-color: rgb(214, 220, 224);
@@ -21,7 +24,7 @@
   .card-text {
     font-size: 1rem;
   }
-.button {
+.link-button {
     background-color: #152016;
     border: none;
     color: white;
@@ -34,9 +37,30 @@
     margin: 4px 2px;
     cursor: pointer;
   }
-  .button:hover {
+  .link-button:hover {
     background-color: #0d0e0d;
     color: white;
     font-size: 18px;
   }
-  
+  .arrow-button{
+    background-color: #152016;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-size: 45px;
+    cursor: pointer;
+    outline: auto;
+  }
+  .arrow-button:hover {
+    background-color: #0d0e0d;
+    color: white;
+    font-size: 50px;
+  }
+  .arrow-container{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    /* background-color: #00191f; */
+    /* width: 85px; */
+    
+  }

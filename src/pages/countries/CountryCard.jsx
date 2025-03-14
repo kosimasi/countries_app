@@ -15,7 +15,7 @@ const CountryCard = ({ country }) => {
           <p className="card-text">
             <strong>Capital:</strong> {country.capital?.[0] || "N/A"}
           </p>
-          <Link to={`/country/${country.cca3}`} className="btn button">
+          <Link to={`/country/${country.cca3}`} className="btn link-button">
             View Details
           </Link>
         </div>
