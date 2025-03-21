@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Container, Row, Col, Card, Spinner, Alert } from "react-bootstrap";
-import "./CountryDetails.css"; 
+import "./CountryDetails.css";
 
 const fetchCountryDetails = async (cca3) => {
   const response = await fetch(`https://restcountries.com/v3.1/alpha/${cca3}`);
@@ -28,24 +28,24 @@ const CountryDetails = () => {
   if (error)
     return (
       <Alert variant="danger" className="mt-4">
-        Error loading country details. Please try again later.
+        ❌ Error loading country details. Please try again later.
       </Alert>
     );
 
   if (!data || data.length === 0)
     return (
       <Alert variant="warning" className="mt-4">
-        No data found for this country.
+        ⚠️ No data found for this country.
       </Alert>
     );
 
   const country = data[0];
 
   return (
-    <Container className="mt-4 ">
-      <Row className="justify-content-center ">
-        <Col md={8}>
-          <Card className="shadow">
+    <Container className="country-container">
+      <Row className="justify-content-center w-100">
+        <Col md={8} sm={10} lg={6}>
+          <Card className="shadow ">
             <Card.Img
               variant="top"
               src={country.flags.png}
@@ -56,37 +56,42 @@ const CountryDetails = () => {
               <Card.Title className="text-center mb-4">
                 {country.name.common}
               </Card.Title>
-              <Row>
-                <Col md={6}>
-                  <Card.Text>
-                    <strong>Capital:</strong> {country.capital?.[0] || "N/A"}
-                  </Card.Text>
-                  <Card.Text>
-                    <strong>Population:</strong>{" "}
-                    {country.population.toLocaleString()}
-                  </Card.Text>
-                  <Card.Text>
-                    <strong>Region:</strong> {country.region}
-                  </Card.Text>
-                  <Card.Text>
-                    <strong>Subregion:</strong> {country.subregion}
-                  </Card.Text>
-                </Col>
-                <Col md={6}>
-                  <Card.Text>
-                    <strong>Languages:</strong>{" "}
-                    {Object.values(country.languages).join(", ")}
-                  </Card.Text>
-                  <Card.Text>
-                    <strong>Currencies:</strong>{" "}
-                    {Object.values(country.currencies)
-                      .map((currency) => currency.name)
-                      .join(", ")}
-                  </Card.Text>
-                </Col>
-              </Row>
             </Card.Body>
           </Card>
+        </Col>
+
+        <Col lg={6} className="country-details">
+          <Row className="detail-row">
+            🌍 <strong>Region:</strong> {country.region || "N/A"}
+          </Row>
+          <Row className="detail-row">
+            🏙️ <strong>Capital:</strong> {country.capital?.[0] || "N/A"}
+          </Row>
+          <Row className="detail-row">
+            🗺️ <strong>Subregion:</strong> {country.subregion || "N/A"}
+          </Row>
+          <Row className="detail-row">
+            🗣️ <strong>Languages:</strong>{" "}
+            {country.languages
+              ? Object.values(country.languages).join(", ")
+              : "N/A"}
+          </Row>
+          <Row className="detail-row">
+            💰 <strong>Currencies:</strong>{" "}
+            {country.currencies
+              ? Object.values(country.currencies)
+                  .map((c) => c.name)
+                  .join(", ")
+              : "N/A"}
+          </Row>
+          <Row className="detail-row">
+            👥 <strong>Population:</strong>{" "}
+            {country.population?.toLocaleString() || "N/A"}
+          </Row>
+          <Row className="detail-row">
+            🛂 <strong>Border Countries:</strong>{" "}
+            {country.borders ? country.borders.join(", ") : "None"}
+          </Row>
         </Col>
       </Row>
     </Container>

@@ -1,11 +1,19 @@
-
+ .country-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #f4f4f4; */
+  min-height: 100vh;
+  padding: 2rem;
+}
+  
 .flag-image {
-    height: 200px;
+    height: 350px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
   }
   
-  .card {
+  .country-card {
     border: none;
     border-radius: 10px;
     width: 100%;
@@ -16,12 +24,35 @@
     font-weight: bold;
   }
   
-  .card-text {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .alert {
-    margin-top: 2rem;
-  }
- 
+.country-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+
+.country-details {
+  background-color: #f4f4f4; 
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.detail-row {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.alert {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
