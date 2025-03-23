@@ -8,7 +8,7 @@
 }
   
 .flag-image {
-    height: 350px;
+    height: 370px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
   }
@@ -17,6 +17,7 @@
     border: none;
     border-radius: 10px;
     width: 100%;
+    margin-bottom: 2rem;
   }
   
   .card-title {
@@ -43,7 +44,7 @@
 .detail-row {
   font-size: 1.1rem;
   font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid #eee;
 }
 

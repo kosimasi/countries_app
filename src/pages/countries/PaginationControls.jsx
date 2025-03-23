@@ -54,23 +54,19 @@ const PaginationControls = ({ currentPage, totalPages, onPageChange }) => {
 
   return (
     <Pagination className="justify-content-center mt-4">
-      <Pagination.First
-        onClick={() => onPageChange(1)}
-        disabled={currentPage === 1}
-      />
       <Pagination.Prev
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-      />
+      >
+        &lt; Previous
+      </Pagination.Prev>
       {getPaginationItems()}
       <Pagination.Next
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-      />
-      <Pagination.Last
-        onClick={() => onPageChange(totalPages)}
-        disabled={currentPage === totalPages}
-      />
+      >
+        Next &gt;
+      </Pagination.Next>
     </Pagination>
   );
 };

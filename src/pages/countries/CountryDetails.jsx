@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { Container, Row, Col, Card, Spinner, Alert } from "react-bootstrap";
+import { Container, Row, Col, Card, Spinner, Alert, Collapse } from "react-bootstrap";
 import "./CountryDetails.css";
 
 const fetchCountryDetails = async (cca3) => {
@@ -43,6 +43,9 @@ const CountryDetails = () => {
 
   return (
     <Container className="country-container">
+      <Row className="justify-content-center mb-4">
+        <h1>{country.name.common}</h1>
+      </Row>
       <Row className="justify-content-center w-100">
         <Col md={8} sm={10} lg={6}>
           <Card className="shadow ">
@@ -61,37 +64,37 @@ const CountryDetails = () => {
         </Col>
 
         <Col lg={6} className="country-details">
-          <Row className="detail-row">
-            🌍 <strong>Region:</strong> {country.region || "N/A"}
-          </Row>
-          <Row className="detail-row">
+          <Col className="detail-row">
+            🌍 <strong>Region  :  </strong> {country.region || "N/A"}
+          </Col>
+          <Col className="detail-row">
             🏙️ <strong>Capital:</strong> {country.capital?.[0] || "N/A"}
-          </Row>
-          <Row className="detail-row">
+          </Col>
+          <Col className="detail-row">
             🗺️ <strong>Subregion:</strong> {country.subregion || "N/A"}
-          </Row>
-          <Row className="detail-row">
+          </Col>
+          <Col className="detail-row">
             🗣️ <strong>Languages:</strong>{" "}
             {country.languages
               ? Object.values(country.languages).join(", ")
               : "N/A"}
-          </Row>
-          <Row className="detail-row">
+          </Col>
+          <Col className="detail-row">
             💰 <strong>Currencies:</strong>{" "}
             {country.currencies
               ? Object.values(country.currencies)
                   .map((c) => c.name)
                   .join(", ")
               : "N/A"}
-          </Row>
-          <Row className="detail-row">
+          </Col>
+          <Col className="detail-row">
             👥 <strong>Population:</strong>{" "}
             {country.population?.toLocaleString() || "N/A"}
-          </Row>
-          <Row className="detail-row">
+          </Col>
+          <Col className="detail-row">
             🛂 <strong>Border Countries:</strong>{" "}
             {country.borders ? country.borders.join(", ") : "None"}
-          </Row>
+          </Col>
         </Col>
       </Row>
     </Container>
