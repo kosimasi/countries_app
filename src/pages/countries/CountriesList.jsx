@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { useSearchParams } from "react-router-dom";
 import CountryCard from "./CountryCard";
 import PaginationControls from "./PaginationControls";
 import Navbar from "./Navbar";
@@ -35,9 +36,22 @@ const CountriesList = () => {
     queryFn: fetchCountries,
   });
 
-  const [currentPage, setCurrentPage] = useState(1);
+
+    const [searchParams, setSearchParams] = useSearchParams(); 
+  const initialPage = parseInt(searchParams.get("page")) || 1; 
+
+  const [currentPage, setCurrentPage] = useState(initialPage);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedContinent, setSelectedContinent] = useState("all");
+
+    useEffect(() => {
+    setSearchParams({ page: currentPage });
+  }, [currentPage, setSearchParams]);
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    setCurrentPage(1); // Ensure search results always start on page 1
+  };
 
   const filteredCountries = data
     ? filterCountries(data, searchTerm, selectedContinent)
@@ -83,7 +97,7 @@ const CountriesList = () => {
   return (
     <div className="container-fluid container-holder">
       <Navbar
-        onSearch={setSearchTerm}
+        onSearch={handleSearch}
         onContinentSelect={setSelectedContinent}
       />
       <div className="row">
@@ -121,8 +135,10 @@ const CountriesList = () => {
         totalPages={totalPages}
         onPageChange={handlePageChange}
       />
+      <p className="text-center mx-2">Page {currentPage} of {totalPages}</p>
     </div>
   );
 };
 
 export default CountriesList;
+
