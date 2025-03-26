@@ -10,7 +10,7 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           Countries App

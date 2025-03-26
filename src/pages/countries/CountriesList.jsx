@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import "./countries.css";
 import axios from "axios";
 
+
 // Constants
 const ITEMS_PER_PAGE = 8;
 const API_URL = "https://restcountries.com/v3.1/all";
@@ -134,7 +135,7 @@ const CountriesList = () => {
   const handleSearch = useCallback(
     (term) => {
       setSearchTerm(term);
-      setCurrentPage(1);
+      updatePage(1);
     },
     [updatePage]
   );
@@ -164,7 +165,7 @@ const CountriesList = () => {
   }
 
   return (
-    <div className="container-fluid container-holder">
+    <div className="container-fluid container-holder p-0">
       <Navbar
         onSearch={handleSearch}
         onContinentSelect={handleContinentSelect}
