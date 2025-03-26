@@ -19,11 +19,11 @@ const API_URL = "https://restcountries.com/v3.1/all";
  * @returns {Promise<Array>} Array of country objects
  */
 const fetchCountries = async () => {
-  const response = await fetch(API_URL);
-  if (!response.ok) {
+  const response = await axios.get(API_URL);
+  if (!response.data) {
     throw new Error(`Failed to fetch countries `);
   }
-  return response.json();
+  return response.data;
 };
 
 /**
@@ -218,7 +218,15 @@ const PaginationArrow = ({ direction, onClick, disabled }) => (
       disabled={disabled}
       aria-label={direction === "prev" ? "Previous page" : "Next page"}
     >
-      {direction === "prev" ? "&lt;" : "&gt;"}
+       {direction === "prev" ? (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      ) : (
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      )}
     </button>
   </div>
 );
