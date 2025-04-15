@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import HomePage from './pages/homePage/HomePage';
 import CountriesList from './pages/countries/CountriesList';
 import CountryDetails from './pages/countries/CountryDetails';
+import Practice from './components/footer/Practice';
 
 
 const queryClient = new QueryClient();
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/countries" element={<CountriesList />} />
           <Route path="/country/:cca3" element={<CountryDetails />} />
+          <Route path="/pract" element={<Practice />} />
         </Routes>
       </Router>
     </QueryClientProvider>

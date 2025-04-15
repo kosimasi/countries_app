@@ -107,7 +107,6 @@ const CountriesList = () => {
     queryFn: fetchCountries,
   });
   const [searchTerm, setSearchTerm] = useState("");
-  // const [searchParams, setSearchParams] = useSearchParams();
   const [selectedContinent, setSelectedContinent] = useState("all");
   const { currentPage, updatePage } = usePagination(1);
 
@@ -135,7 +134,7 @@ const CountriesList = () => {
   const handleSearch = useCallback(
     (term) => {
       setSearchTerm(term);
-      updatePage(1);
+      updatePage(1)
     },
     [updatePage]
   );
@@ -169,6 +168,7 @@ const CountriesList = () => {
       <Navbar
         onSearch={handleSearch}
         onContinentSelect={handleContinentSelect}
+        // filteredCountries={filteredCountries}
       />
       <div className="row">
         <PaginationArrow
@@ -187,9 +187,10 @@ const CountriesList = () => {
               <div className="col-12 text-center py-5">
                 <h4>No countries match your search criteria</h4>
               </div>
-            )}
-          </div>
-        </div>
+            )} 
+
+    </div>
+        </div>    
         <PaginationArrow
           direction="next"
           onClick={handleNextPage}

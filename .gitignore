@@ -1,4 +1,5 @@
-# Logs
+# Ignore everything in footer directory
+src/components/footer/
 logs
 *.log
 npm-debug.log*
