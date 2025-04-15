@@ -81,12 +81,12 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                 >
                   <div
                     className="d-flex flex-column flex-lg-row align-items-lg-center 
-                  justify-content-between w-100 bg-dark"
+                  justify-content-between w-100 bg-primary"
                   >
                     {" "}
                     <div className="d-flex flex-column flex-lg-row align-items-center">
                       <button
-                        className="btn btn-outline-light m-2 p-2"
+                        className="btn bg-light text-dark m-2 p-2 search-button"
                         onClick={toggleSearchDrawer}
                       >
                          <FontAwesomeIcon icon={faSearch} className="icon-style mx-2" />
@@ -126,7 +126,7 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                         )}
                       </div>
                     </div>
-                    <button>
+                    <button className="btn bg-light text-dark m-2 p-2">
                       <FontAwesomeIcon icon={faSun} className="icon-style" />
                     </button>
                   </div>
@@ -140,10 +140,13 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
       {/* Search Drawer */}
       <div className={`search-drawer ${isSearchOpen ? "open" : ""}`}>
         <div className="search-header">
-          <button className="close-button" onClick={toggleSearchDrawer}>
-            &times;
-          </button>
-          <h2>Search Countries</h2>
+          <button 
+  className="close-button btn btn-danger position-relative alert-pulse" 
+  onClick={toggleSearchDrawer}
+>
+  <span className="position-absolute top-50 start-50 translate-middle fw-bold">X</span>
+</button>
+          <h2>Search For Country</h2>
         </div>
 
         <div className="search-input-container">

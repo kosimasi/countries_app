@@ -28,12 +28,11 @@
 }
 
 .close-button {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 5px;
-  color: #666;
+ width: 30px;
+ height: 30px;
+ padding: 0px;
+ border: '2px solid #fff';
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.5);
 }
 
 .search-input-container {
@@ -99,8 +98,8 @@
     transition: background-color 0.3s ease;
   }
   .cont-link{
-    color:wheat;
-    font-weight: bold;
+    color:rgb(5, 5, 5);
+    /* font-weight: bold; */
     text-decoration: none;
     padding: 10px 15px;
     display: block;
@@ -114,4 +113,6 @@
     background-color: #bdb9b9;
     color: #000;
   }
- 
+ .search-button{
+  width: 185px;
+ }
