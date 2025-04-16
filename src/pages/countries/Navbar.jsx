@@ -9,7 +9,8 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [continentOpen, setContinentOpen] = useState(false);
+  const [filterOpen, setFilterOpen] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -44,7 +45,7 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
       {!isSearchOpen && (
         <>
            <div
-            className={`bg-success py-2 text-light transition-all 
+            className={`top-navbar py-2 text-light transition-all 
               duration-300  
             ${scrolled ? "h-0 opacity-0 overflow-hidden py-0" : "h-auto opacity-100"}`}>
               <div className="containteir-fluid">
@@ -69,12 +70,9 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
           </div>
           </div> 
           </div>
-          <div
-            className={`sticky-top bg-secondary text-light ${
-              scrolled ? "top-0" : ""
-            }`}
-          >
-            <div className="container-fluid px-0">
+        
+            <div className={`container-fluid px-0 sticky-top ${
+              scrolled ? "top-0" : ""} `}>
               <div
                 className="d-flex flex-column flex-lg-row align-items-center 
               justify-content-between"
@@ -109,13 +107,14 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                       </button>
                       <div
                         className="dropdown"
-                        onMouseEnter={() => setIsOpen(true)}
-                        onMouseLeave={() => setIsOpen(false)}
+                        onMouseEnter={() => setContinentOpen(true)}
+                        onMouseLeave={() => setContinentOpen(false)}
                       >
                         <a className="cont-link">Continent</a>
 
-                        {isOpen && (
+                        {continentOpen && (
                           <ul className="dropdown-menu dropdown-menu-end show link-dropdown">
+                        
                             {[
                               "all",
                               "Africa",
@@ -130,7 +129,40 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                                   to="/countries"
                                   onClick={() => {
                                     onContinentSelect(continent);
-                                    setIsOpen(false);
+                                    setContinentOpen(false);
+                                  }}
+                                >
+                                  {continent === "all" ? "All" : continent}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                      <div
+                        className="dropdown"
+                        onMouseEnter={() => setFilterOpen(true)}
+                        onMouseLeave={() => setFilterOpen(false)}
+                      >
+                        <a className="cont-link">Filter By</a>
+
+                        {filterOpen && (
+                          <ul className="dropdown-menu dropdown-menu-end show link-dropdown">
+                            {[
+                              "Population",
+                              "Area",
+                              "Region",
+                              "Subregion",
+                              "Language",
+                              "Currency",
+                            ].map((continent) => (
+                              <li key={continent} className="dropdown-item">
+                                <Link
+                                  className="dropdown-link"
+                                  to="/countries"
+                                  onClick={() => {
+                                    onContinentSelect(continent);
+                                    setFilterOpen(false);
                                   }}
                                 >
                                   {continent === "all" ? "All" : continent}
@@ -148,7 +180,6 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                 </div>
               </div>
             </div>
-          </div>
         </>
       )}
 

@@ -98,7 +98,7 @@
     transition: background-color 0.3s ease;
   }
   .cont-link{
-    color:rgb(5, 5, 5);
+    color:whitesmoke;
     /* font-weight: bold; */
     text-decoration: none;
     padding: 10px 15px;
@@ -113,12 +113,12 @@
     background-color: #bdb9b9;
     color: #000;
   }
- .search-button{
-  width: 185px;
- }
  .icon{
   width: 20px;
   height: 20px;
   margin-right: 25px;
   color: #fff;
+}
+.top-navbar{
+  background-color: #1874d7;
 }
