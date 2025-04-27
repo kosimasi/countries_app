@@ -122,3 +122,6 @@
 .top-navbar{
   background-color: #1874d7;
 }
+.top-navbar.dark{
+  background-color: #000;
+}

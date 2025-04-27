@@ -6,12 +6,11 @@ import PaginationControls from "./PaginationControls";
 import Navbar from "./Navbar";
 import Loader from "./Loader";
 import ErrorMessage from "./ErrorMessage";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectThemeMode } from "../../features/theme/ThemeSlice";
 import PropTypes from "prop-types";
 import "./countries.css";
 import axios from "axios";
-
 
 // Constants
 const ITEMS_PER_PAGE = 8;
@@ -112,6 +111,8 @@ const CountriesList = () => {
   const [selectedContinent, setSelectedContinent] = useState("all");
   const { currentPage, updatePage } = usePagination(1);
 
+  const themeMode = useSelector(selectThemeMode);
+
   const filteredCountries = useMemo(
     () => filterCountries(countries, searchTerm, selectedContinent),
     [countries, searchTerm, selectedContinent]
@@ -136,7 +137,7 @@ const CountriesList = () => {
   const handleSearch = useCallback(
     (term) => {
       setSearchTerm(term);
-      updatePage(1)
+      updatePage(1);
     },
     [updatePage]
   );
@@ -164,10 +165,13 @@ const CountriesList = () => {
   if (!Array.isArray(countries) || countries.length === 0) {
     return <ErrorMessage message="No countries data available" />;
   }
-  // const themeMode = useSelector(selectThemeMode);
 
   return (
-    <div className={`container-fluid container-holder p-0`}>
+    <div
+      className={` container-fluid container-holder p-0 ${
+        themeMode === "dark" ? "dark" : ""
+      }`}
+    >
       <Navbar
         onSearch={handleSearch}
         onContinentSelect={handleContinentSelect}
@@ -189,10 +193,9 @@ const CountriesList = () => {
               <div className="col-12 text-center py-5">
                 <h4>No countries match your search criteria</h4>
               </div>
-            )} 
-
-    </div>
-        </div>    
+            )}
+          </div>
+        </div>
         <PaginationArrow
           direction="next"
           onClick={handleNextPage}
@@ -222,13 +225,35 @@ const PaginationArrow = ({ direction, onClick, disabled }) => (
       disabled={disabled}
       aria-label={direction === "prev" ? "Previous page" : "Next page"}
     >
-       {direction === "prev" ? (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+      {direction === "prev" ? (
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
         </svg>
       ) : (
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
         </svg>
       )}
     </button>
@@ -241,9 +266,6 @@ PaginationArrow.propTypes = {
   disabled: PropTypes.bool.isRequired,
 };
 
-/**
- * Component for page indicator
- */
 const PageIndicator = ({ currentPage, totalPages }) => (
   <p className="text-center mx-2">
     Page {currentPage} of {totalPages}

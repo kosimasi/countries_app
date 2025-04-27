@@ -2,9 +2,17 @@
 .container-holder{
   background-color: #dcf1f1;
 }
+.container-holder.dark {
+  background-color: #2c2b2b; 
+  color: #ffffff; 
+}
 .card {
     transition: transform 0.2s;
     background-color: rgb(214, 220, 224);
+  }
+  .card.dark{
+    background-color: #0a0101; 
+    color: #ffffff; 
   }
   
   .card:hover {
@@ -25,9 +33,9 @@
     font-size: 1rem;
   }
 .link-button {
-    background-color: #152016;
+    background-color:white;
     border: none;
-    color: white;
+    color: rgb(8, 7, 7);
     padding: 8px 15px;
     border-radius: 15px;
     text-align: center;
@@ -38,8 +46,8 @@
     cursor: pointer;
   }
   .link-button:hover {
-    background-color: #0d0e0d;
-    color: white;
+    background-color: wheat;
+    color: rgb(19, 18, 18);
     font-size: 18px;
   }
   .arrow-button{

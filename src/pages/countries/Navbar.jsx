@@ -53,7 +53,8 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
         <>
           <div
             className={`top-navbar py-2 text-light transition-all 
-              duration-300  
+              duration-300 
+              ${themeMode === "dark" ? "dark" : ""} 
             ${
               scrolled
                 ? "h-0 opacity-0 overflow-hidden py-0"

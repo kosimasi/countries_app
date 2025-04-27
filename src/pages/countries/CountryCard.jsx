@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector} from "react-redux";
+import { selectThemeMode } from "../../features/theme/ThemeSlice";
 
 const CountryCard = ({ country }) => {
+  const themeMode = useSelector(selectThemeMode);
+
   return (
     <div className="col-md-3 my-4">
-      <div className="card h-100 text-center">
+      <div
+        className={`card h-100 text-center ${
+          themeMode === "dark" ? "dark" : ""
+        }`}
+      >
         <img
           src={country.flags.png}
           alt={`Flag of ${country.name.common}`}
@@ -25,6 +33,3 @@ const CountryCard = ({ country }) => {
 };
 
 export default CountryCard;
-
-
-
