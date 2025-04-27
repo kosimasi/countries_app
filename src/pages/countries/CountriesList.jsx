@@ -6,6 +6,8 @@ import PaginationControls from "./PaginationControls";
 import Navbar from "./Navbar";
 import Loader from "./Loader";
 import ErrorMessage from "./ErrorMessage";
+import { useSelector } from "react-redux";
+import { selectThemeMode } from "../../features/theme/ThemeSlice";
 import PropTypes from "prop-types";
 import "./countries.css";
 import axios from "axios";
@@ -162,13 +164,13 @@ const CountriesList = () => {
   if (!Array.isArray(countries) || countries.length === 0) {
     return <ErrorMessage message="No countries data available" />;
   }
+  // const themeMode = useSelector(selectThemeMode);
 
   return (
-    <div className="container-fluid container-holder p-0">
+    <div className={`container-fluid container-holder p-0`}>
       <Navbar
         onSearch={handleSearch}
         onContinentSelect={handleContinentSelect}
-        // filteredCountries={filteredCountries}
       />
       <div className="row">
         <PaginationArrow
