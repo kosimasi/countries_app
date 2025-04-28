@@ -27,6 +27,7 @@ import {
 } from "react-bootstrap-icons";
 import "./CountryDetails.css";
 
+
 const fetchCountryDetails = async (cca3) => {
   const response = await fetch(`https://restcountries.com/v3.1/alpha/${cca3}`);
   return response.json();
@@ -87,17 +88,21 @@ const CountryDetails = () => {
   const unMember = country.unMember ? "Yes" : "No";
 
   return (
-    <Container fluid className="country-details-container">
+    <Container fluid className={`country-details-container 
+    ${themeMode === "dark"?"dark":""}`}>
       <Row className="mb-4">
         <Col>
-          <a href="/" className="back-button">
+          <a href="/" className={`back-button ${themeMode
+            ==="dark"?"dark":""
+          }`}>
             <ArrowLeft size={20} className="me-2" />
             Back to Countries
           </a>
         </Col>
       </Row>
 
-      <Row className="country-header mb-5">
+      <Row className={`country-header mb-5 
+        ${themeMode === "dark" ? "dark" : ""}`}>
         <Col>
           <div className="d-flex align-items-center">
             <img
@@ -106,8 +111,12 @@ const CountryDetails = () => {
               className="country-flag me-4"
             />
             <div>
-              <h1 className="country-title">{country.name.common}</h1>
-              <p className="country-subtitle">{officialName}</p>
+              <h1 className={`country-title 
+                ${themeMode === "dark"?"text-light":""}`}>
+                  {country.name.common}</h1>
+              <p className={`country-subtitle ${
+                themeMode === "dark" ? "text-light" : ""
+              }`}>{officialName}</p>
               <div className="country-badges">
                 <Badge bg="primary" className="me-2">
                   {country.region}
