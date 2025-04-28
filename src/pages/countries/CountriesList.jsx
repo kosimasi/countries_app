@@ -6,7 +6,7 @@ import PaginationControls from "./PaginationControls";
 import Navbar from "./Navbar";
 import Loader from "./Loader";
 import ErrorMessage from "./ErrorMessage";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import { selectThemeMode } from "../../features/theme/ThemeSlice";
 import PropTypes from "prop-types";
 import "./countries.css";

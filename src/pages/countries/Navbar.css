@@ -97,9 +97,11 @@
     display: block;
     transition: background-color 0.3s ease;
   }
+  .dropdown-link.dark{
+    color: #bdb9b9;
+  }
   .cont-link{
     color:whitesmoke;
-    /* font-weight: bold; */
     text-decoration: none;
     padding: 10px 15px;
     display: block;
@@ -124,4 +126,8 @@
 }
 .top-navbar.dark{
   background-color: #000;
+}
+.dropdown-menu.dark{
+  color: #f0f0f0;
+  background-color: #333;
 }

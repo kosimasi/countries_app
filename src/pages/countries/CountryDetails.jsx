@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { useSelector} from "react-redux";
+import { selectThemeMode } from "../../features/theme/ThemeSlice";
 import {
   Container,
   Row,
@@ -36,7 +38,7 @@ const CountryDetails = () => {
     queryKey: ["country", cca3],
     queryFn: () => fetchCountryDetails(cca3),
   });
-
+  const themeMode = useSelector(selectThemeMode);
   if (isLoading)
     return (
       <div className="loading-screen">

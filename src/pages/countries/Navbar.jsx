@@ -130,12 +130,13 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                 >
                   <div className="d-flex flex-column flex-lg-row align-items-center">
                     <button
-                      className="btn bg-light text-dark m-2 p-2 search-button"
+                      className={`btn bg-light m-2 p-2 search-button
+                        ${themeMode === "dark"?"text-light bg-dark":""}`}
                       onClick={toggleSearchDrawer}
                     >
                       <FontAwesomeIcon
                         icon={faSearch}
-                        className="icon-style mx-2"
+                        className={`icon-style mx-2 ${themeMode === "dark"?"text-light":"light"}`}
                       />
                       Search
                     </button>
@@ -147,7 +148,8 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                       <a className="cont-link">Continent</a>
 
                       {continentOpen && (
-                        <ul className="dropdown-menu dropdown-menu-end show link-dropdown">
+                        <ul className={`dropdown-menu dropdown-menu-end show link-dropdown
+                        ${themeMode === "dark"? "dark":""}`}>
                           {[
                             "all",
                             "Africa",
@@ -158,7 +160,7 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                           ].map((continent) => (
                             <li key={continent} className="dropdown-item">
                               <Link
-                                className="dropdown-link"
+                                className={`dropdown-link ${themeMode === "dark" ? "dark" : ""}`}
                                 to="/countries"
                                 onClick={() => {
                                   onContinentSelect(continent);
@@ -173,14 +175,15 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                       )}
                     </div>
                     <div
-                      className="dropdown"
+                      className={`dropdown ${themeMode === "dark" ? "dark" :""}`}
                       onMouseEnter={() => setFilterOpen(true)}
                       onMouseLeave={() => setFilterOpen(false)}
                     >
                       <a className="cont-link">Filter By</a>
 
                       {filterOpen && (
-                        <ul className="dropdown-menu dropdown-menu-end show link-dropdown">
+                        <ul className={`dropdown-menu dropdown-menu-end show link-dropdown
+                        ${themeMode === "dark" ? "dark" : ""}`}>
                           {[
                             "Population",
                             "Area",
@@ -191,7 +194,7 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                           ].map((continent) => (
                             <li key={continent} className="dropdown-item">
                               <Link
-                                className="dropdown-link"
+                                className={`dropdown-link ${themeMode === "dark" ? "dark" :""}`}
                                 to="/countries"
                                 onClick={() => {
                                   onContinentSelect(continent);
@@ -207,14 +210,15 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
                     </div>
                   </div>
                   <button
-                    className="btn theme-toggle-btn bg-light"
+                    className={`btn theme-toggle-btn 
+                      ${themeMode === "dark" ? "bg-dark text-light":"bg-primary text-light"}`}
                     onClick={handleThemeToggle}
                     aria-label={`Switch to ${
                       themeMode === "dark" ? "light" : "dark"
                     } mode`}
                   >
                     {themeMode === "dark" ? (
-                      <FontAwesomeIcon icon={faSun} className="icon-style" />
+                      <FontAwesomeIcon icon={faSun} className="icon-style " />
                     ) : (
                       <FontAwesomeIcon icon={faMoon} className="icon-style" />
                     )}
