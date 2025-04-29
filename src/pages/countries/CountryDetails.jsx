@@ -20,17 +20,27 @@ import {
   GeoAlt,
   People,
   CurrencyExchange,
-  ChatLeftText,
   Building,
   BorderAll,
   ArrowLeft,
 } from "react-bootstrap-icons";
 import "./CountryDetails.css";
 
+/**
+ * Fetches country details from REST Countries API
+ * @param {string} cca3 - The 3-letter country code to fetch details for
+ * @returns {Promise<object>} Promise resolving to country data
+ */
+
 const fetchCountryDetails = async (cca3) => {
   const response = await fetch(`https://restcountries.com/v3.1/alpha/${cca3}`);
   return response.json();
 };
+
+/**
+ * CountryDetails component displays comprehensive information about a specific country
+ * Fetches data from REST Countries API and presents it in an organized layout with tabs
+ */
 
 const CountryDetails = () => {
   const { cca3 } = useParams();
@@ -65,7 +75,7 @@ const CountryDetails = () => {
         <Alert variant="warning" className="mt-4">
           <h4>⚠️ Country not found</h4>
           <p>The requested country data is not available.</p>
-          //{" "}
+          {" "}
         </Alert>
       </div>
     );
@@ -151,7 +161,6 @@ const CountryDetails = () => {
             <Tab eventKey="overview" title="Overview">
               <Row className="mt-4">
                 <Col md={6}>
-                  {/* <Card className="mb-4"> */}
                   <Card
                     className={`mb-4 ${themeMode === "dark" ? "dark" : ""}`}
                   >
@@ -186,7 +195,6 @@ const CountryDetails = () => {
                   </Card>
                 </Col>
                 <Col md={6}>
-                  {/* <Card className="mb-4"> */}
                   <Card
                     className={`mb-4 ${themeMode === "dark" ? "dark" : ""}`}
                   >
@@ -196,7 +204,6 @@ const CountryDetails = () => {
                         Demographic Information
                       </Card.Title>
                       <ListGroup variant="flush">
-                        {/* <ListGroup.Item> */}
                         <ListGroup.Item
                           className={themeMode === "dark" ? "text-light" : ""}
                         >
