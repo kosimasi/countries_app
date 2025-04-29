@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 import { selectThemeMode } from "../../features/theme/ThemeSlice";
 import {
   Container,
@@ -26,7 +26,6 @@ import {
   ArrowLeft,
 } from "react-bootstrap-icons";
 import "./CountryDetails.css";
-
 
 const fetchCountryDetails = async (cca3) => {
   const response = await fetch(`https://restcountries.com/v3.1/alpha/${cca3}`);
@@ -88,21 +87,27 @@ const CountryDetails = () => {
   const unMember = country.unMember ? "Yes" : "No";
 
   return (
-    <Container fluid className={`country-details-container 
-    ${themeMode === "dark"?"dark":""}`}>
+    <Container
+      fluid
+      className={`country-details-container 
+    ${themeMode === "dark" ? "dark" : ""}`}
+    >
       <Row className="mb-4">
         <Col>
-          <a href="/" className={`back-button ${themeMode
-            ==="dark"?"dark":""
-          }`}>
+          <a
+            href="/"
+            className={`back-button ${themeMode === "dark" ? "dark" : ""}`}
+          >
             <ArrowLeft size={20} className="me-2" />
             Back to Countries
           </a>
         </Col>
       </Row>
 
-      <Row className={`country-header mb-5 
-        ${themeMode === "dark" ? "dark" : ""}`}>
+      <Row
+        className={`country-header mb-5 
+        ${themeMode === "dark" ? "dark" : ""}`}
+      >
         <Col>
           <div className="d-flex align-items-center">
             <img
@@ -111,12 +116,19 @@ const CountryDetails = () => {
               className="country-flag me-4"
             />
             <div>
-              <h1 className={`country-title 
-                ${themeMode === "dark"?"text-light":""}`}>
-                  {country.name.common}</h1>
-              <p className={`country-subtitle ${
-                themeMode === "dark" ? "text-light" : ""
-              }`}>{officialName}</p>
+              <h1
+                className={`country-title 
+                ${themeMode === "dark" ? "text-light" : ""}`}
+              >
+                {country.name.common}
+              </h1>
+              <p
+                className={`country-subtitle ${
+                  themeMode === "dark" ? "text-light" : ""
+                }`}
+              >
+                {officialName}
+              </p>
               <div className="country-badges">
                 <Badge bg="primary" className="me-2">
                   {country.region}
@@ -139,14 +151,19 @@ const CountryDetails = () => {
             <Tab eventKey="overview" title="Overview">
               <Row className="mt-4">
                 <Col md={6}>
-                  <Card className="mb-4">
+                  {/* <Card className="mb-4"> */}
+                  <Card
+                    className={`mb-4 ${themeMode === "dark" ? "dark" : ""}`}
+                  >
                     <Card.Body>
                       <Card.Title className="section-title">
                         <GeoAlt className="me-2" />
                         Geographic Information
                       </Card.Title>
                       <ListGroup variant="flush">
-                        <ListGroup.Item>
+                        <ListGroup.Item
+                          className={themeMode === "dark" ? "text-light" : ""}
+                        >
                           <strong>Capital:</strong>{" "}
                           {country.capital?.[0] || "N/A"}
                         </ListGroup.Item>
@@ -169,14 +186,20 @@ const CountryDetails = () => {
                   </Card>
                 </Col>
                 <Col md={6}>
-                  <Card className="mb-4">
+                  {/* <Card className="mb-4"> */}
+                  <Card
+                    className={`mb-4 ${themeMode === "dark" ? "dark" : ""}`}
+                  >
                     <Card.Body>
                       <Card.Title className="section-title">
                         <People className="me-2" />
                         Demographic Information
                       </Card.Title>
                       <ListGroup variant="flush">
-                        <ListGroup.Item>
+                        {/* <ListGroup.Item> */}
+                        <ListGroup.Item
+                          className={themeMode === "dark" ? "text-light" : ""}
+                        >
                           <strong>Population:</strong>{" "}
                           {country.population?.toLocaleString() || "N/A"}
                         </ListGroup.Item>
@@ -202,14 +225,18 @@ const CountryDetails = () => {
             <Tab eventKey="economy" title="Economy">
               <Row className="mt-4">
                 <Col>
-                  <Card>
+                  <Card
+                    className={`mb-4 ${themeMode === "dark" ? "dark" : ""}`}
+                  >
                     <Card.Body>
                       <Card.Title className="section-title">
                         <CurrencyExchange className="me-2" />
                         Economic Information
                       </Card.Title>
                       <ListGroup variant="flush">
-                        <ListGroup.Item>
+                        <ListGroup.Item
+                          className={themeMode === "dark" ? "text-light" : ""}
+                        >
                           <strong>Currencies:</strong> {currencies.join(", ")}
                         </ListGroup.Item>
                         {country.gini && (
@@ -228,7 +255,7 @@ const CountryDetails = () => {
             <Tab eventKey="maps" title="Maps">
               <Row className="mt-4">
                 <Col>
-                  <Card>
+                  <Card className={`${themeMode === "dark" ? "dark" : ""}`}>
                     <Card.Body>
                       <Card.Title className="section-title">
                         <Globe className="me-2" />
@@ -296,7 +323,7 @@ const CountryDetails = () => {
       {country.coatOfArms?.png && (
         <Row className="mb-5">
           <Col>
-            <Card>
+            <Card className={`${themeMode === "dark" ? "dark" : ""}`}>
               <Card.Body>
                 <Card.Title className="section-title">
                   <Building className="me-2" />

@@ -1,3 +1,4 @@
+/*===== light theme and general style ===== */
 .country-details-container {
   padding: 2rem;
   max-width: 1200px;
@@ -56,7 +57,6 @@
   border: 1px solid #eee;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
-
 .country-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -69,11 +69,9 @@
   color: #666;
   margin-bottom: 1.5rem;
 }
-
 .country-badges {
   margin-top: 1rem;
 }
-
 .section-title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -130,14 +128,64 @@
     flex-direction: column;
     text-align: center;
   }
-  
   .country-flag {
     margin-bottom: 1.5rem;
     margin-right: 0;
     width: 150px;
   }
-  
   .country-title {
     font-size: 2rem;
   }
+}
+/* ====== dark theme ====== */
+.country-details-container.dark .list-group-item {
+  background-color: #495057 ;
+  color: #ffffff;
+  border-color: #555;
+}
+.country-details-container.dark .section-title {
+  color: #ffffff;
+}
+
+.country-details-container.dark .nav-tabs .nav-link {
+  color: #ffffff;
+}
+
+.country-details-container.dark .nav-tabs .nav-link.active {
+  background-color: #3a3a3a;
+  color: #ffffff;
+  border-color: #555 #555 #3a3a3a;
+}
+
+.country-details-container.dark .nav-tabs {
+  border-bottom-color: #555;
+}
+
+.country-details-container.dark .badge {
+  color: #ffffff;
+}
+
+.country-details-container.dark .btn-outline-primary {
+  color: #4dabf7;
+  border-color: #4dabf7;
+}
+
+.country-details-container.dark .btn-outline-primary:hover {
+  background-color: #4dabf7;
+  color: #ffffff;
+}
+
+.country-details-container.dark .btn-outline-secondary {
+  color: #adb5bd;
+  border-color: #adb5bd;
+}
+
+.country-details-container.dark .btn-outline-secondary:hover {
+  background-color: #adb5bd;
+  color: #000000;
+}
+
+.card.dark {
+  background-color: #3a3a3a;
+  color: #ffffff;
 }
