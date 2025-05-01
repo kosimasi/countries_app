@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 import { selectThemeMode } from "../../features/theme/ThemeSlice";
-import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { ArrowLeft } from "react-bootstrap-icons";
-import { fetchCountryDetails } from "../../components/utils";
+import { fetchCountryDetails } from "../../components/utils/utils";
 import LoadingErrorHandlers from "../../components/LoadingErrorHandlers";
 import CountryHeader from "../../components/CountryHeader";
 import CountryTabs from "../../components/CountryTabs";
@@ -17,11 +17,6 @@ import "./CountryDetails.css";
  * @param {string} cca3 - The 3-letter country code to fetch details for
  * @returns {Promise<object>} Promise resolving to country data
  */
-
-// const fetchCountryDetails = async (cca3) => {
-//   const response = await fetch(`https://restcountries.com/v3.1/alpha/${cca3}`);
-//   return response.json();
-// };
 
 /**
  * CountryDetails component displays comprehensive information about a specific country

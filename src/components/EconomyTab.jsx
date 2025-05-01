@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, ListGroup,Row,Col } from "react-bootstrap";
 import { CurrencyExchange } from "react-bootstrap-icons";
-import { getCountryDetails } from "./utils";
+import { getCountryDetails } from "./utils/utils";
 
 const EconomyTab = ({ country, themeMode }) => {
   const { currencies } = getCountryDetails(country);

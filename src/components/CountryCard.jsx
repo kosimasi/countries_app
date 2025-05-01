@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector} from "react-redux";
-import { selectThemeMode } from "../../features/theme/ThemeSlice";
+import { selectThemeMode } from "../features/theme/ThemeSlice";
 
 const CountryCard = ({ country }) => {
   const themeMode = useSelector(selectThemeMode);

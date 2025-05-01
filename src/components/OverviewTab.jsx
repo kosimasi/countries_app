@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Card, ListGroup } from "react-bootstrap";
 import { GeoAlt, People } from "react-bootstrap-icons";
-import { getCountryDetails } from "./utils";
+import { getCountryDetails } from "./utils/utils";
 
 const OverviewTab = ({ country, themeMode }) => {
   const { nativeNames, languages, timezones, drivingSide, unMember } =

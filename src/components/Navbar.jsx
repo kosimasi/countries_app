@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FaFacebook, FaLinkedin, FaWhatsapp, FaTwitter } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { selectThemeMode, toggleTheme } from "../../features/theme/ThemeSlice";
+import { selectThemeMode,toggleTheme } from "../features/theme/ThemeSlice";
 import "./Navbar.css";
 
 const Navbar = ({ onSearch, onContinentSelect }) => {
