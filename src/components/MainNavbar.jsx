@@ -6,7 +6,6 @@ import ThemeToggle from "./ThemeToggle";
 
 const MainNavbar = ({
   themeMode,
-  scrolled,
   toggleSearchDrawer,
   onContinentSelect,
   handleThemeToggle,
