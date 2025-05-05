@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TopNavbar from "./TopNavbar";
 import MainNavbar from "./MainNavbar";
-import SearchDrawer from "./SearchDrawer";
 import { useSelector, useDispatch } from "react-redux";
 import { selectThemeMode, toggleTheme } from "../features/theme/ThemeSlice";
 import "./Navbar.css";
@@ -46,26 +45,17 @@ const Navbar = ({ onSearch, onContinentSelect }) => {
 
   return (
     <>
-      {!isSearchOpen && (
-        <>
-          <TopNavbar themeMode={themeMode} scrolled={scrolled} />
-          <MainNavbar
-            themeMode={themeMode}
-            scrolled={scrolled}
-            toggleSearchDrawer={toggleSearchDrawer}
-            onContinentSelect={onContinentSelect}
-            handleThemeToggle={handleThemeToggle}
-          />
-        </>
-      )}
-
-      <SearchDrawer
-        isSearchOpen={isSearchOpen}
+   <TopNavbar themeMode={themeMode} scrolled={scrolled} />
+<MainNavbar
+        themeMode={themeMode}
+        scrolled={scrolled}
         toggleSearchDrawer={toggleSearchDrawer}
+        onContinentSelect={onContinentSelect}
+        handleThemeToggle={handleThemeToggle}
+        isSearchOpen={isSearchOpen}
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         handleSearch={handleSearch}
-        onSearch={onSearch}
       />
     </>
   );

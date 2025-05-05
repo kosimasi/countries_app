@@ -11,14 +11,13 @@ import useKeyboardNavigation from "../../components/hooks/UseKeyboardNavigation"
 import PaginationArrow from "../../components/PaginationArrow";
 import PageIndicator from "../../components/PageIndictor";
 import CountriesGrid from "../../components/CountriesGrid";
-
 import Navbar from "../../components/Navbar";
 import Loader from "../../components/Loader";
 import ErrorMessage from "../../components/ErrorMessage";
 import { useSelector } from "react-redux";
 import { selectThemeMode } from "../../features/theme/ThemeSlice";
 import "./countries.css";
-import axios from "axios";
+
 
 // Constants
 const ITEMS_PER_PAGE = 8;
