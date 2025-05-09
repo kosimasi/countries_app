@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./ErrorMessage.css"; // Optional styling file
+import "./ErrorMessage.css";
 
 const ErrorMessage = ({ message = "An error occurred", onRetry }) => (
   <div className="error-message">

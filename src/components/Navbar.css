@@ -5,15 +5,18 @@
   color: #666;
   text-align: center;
 }
-
 .navbar-toggler {
-    background-color: #000;
     border: 2px solid #fff;
     padding: 0.5rem;
     margin-right: auto;
   }
-  
-  .navbar-toggler-icon {
+.navbar-toggler.dark {
+  background-color: #000;
+}
+.navbar-toggler.light {
+  background-color: rgb(85, 196, 240); 
+}
+   .navbar-toggler-icon {
     
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     width: 1.5em;
@@ -21,7 +24,7 @@
   }
   
   .navbar-toggler:hover {
-    background-color: #fff;
+    background-color: #245f9d;
     border-color: #000;
   }
   

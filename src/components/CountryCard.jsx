@@ -7,7 +7,7 @@ const CountryCard = ({ country }) => {
   const themeMode = useSelector(selectThemeMode);
 
   return (
-    <div className="col-md-3 my-4">
+    <div className="col-12 col-sm-6 col-md-6 col-lg-3 my-2">
       <div
         className={`card h-100 text-center ${
           themeMode === "dark" ? "dark" : ""

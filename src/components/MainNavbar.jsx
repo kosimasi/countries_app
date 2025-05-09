@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faBars, faTimes, faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {
+  faSearch,
+  faBars,
+  faTimes,
+  faArrowLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import DropdownMenu from "./DropdownMenu";
 import ThemeToggle from "./ThemeToggle";
 
@@ -12,7 +17,7 @@ const MainNavbar = ({
   isSearchOpen,
   searchTerm,
   setSearchTerm,
-  handleSearch
+  handleSearch,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -27,25 +32,27 @@ const MainNavbar = ({
       } sticky-top`}
     >
       <div className="container-fluid">
-        
-      {!isSearchOpen ? (
+        {!isSearchOpen ? (
           <>
             <div className="d-flex justify-content-between w-100 align-items-center">
               <button
-                className="navbar-toggler p-2 border-0"
+                className={`navbar-toggler p-2 border-0 hamburger-button 
+                    ${themeMode === "light" ? "light" : "dark"}`}
                 type="button"
                 onClick={toggleMobileMenu}
                 aria-label="Toggle navigation"
               >
                 <FontAwesomeIcon
                   icon={mobileMenuOpen ? faTimes : faBars}
-                  className={themeMode === "dark" ? "text-light" : "text-light"}
+                  className="text-light"
                   size="lg"
                 />
               </button>
 
               <button
-                className={`btn ${themeMode === "dark" ? "btn-dark" : "btn-light"} ms-2 me-auto`}
+                className={`btn ${
+                  themeMode === "dark" ? "btn-dark" : "btn-light"
+                } ms-2 me-auto`}
                 onClick={toggleSearchDrawer}
               >
                 <FontAwesomeIcon icon={faSearch} className="me-2" />
@@ -59,13 +66,24 @@ const MainNavbar = ({
               />
             </div>
 
-            <div className={`collapse navbar-collapse ${mobileMenuOpen ? "show" : ""}`}>
+            <div
+              className={`collapse navbar-collapse ${
+                mobileMenuOpen ? "show" : ""
+              }`}
+            >
               <div className="d-flex flex-column flex-lg-row align-items-lg-center w-100 mt-2 mt-lg-0">
                 <div className="d-flex flex-column flex-lg-row w-100">
                   <DropdownMenu
                     title="Continent"
                     themeMode={themeMode}
-                    items={["all", "Africa", "Americas", "Asia", "Europe", "Oceania"]}
+                    items={[
+                      "all",
+                      "Africa",
+                      "Americas",
+                      "Asia",
+                      "Europe",
+                      "Oceania",
+                    ]}
                     onSelect={(item) => {
                       onContinentSelect(item);
                       setMobileMenuOpen(false);
@@ -76,7 +94,14 @@ const MainNavbar = ({
                   <DropdownMenu
                     title="Filter"
                     themeMode={themeMode}
-                    items={["Population", "Area", "Region", "Subregion", "Language", "Currency"]}
+                    items={[
+                      "Population",
+                      "Area",
+                      "Region",
+                      "Subregion",
+                      "Language",
+                      "Currency",
+                    ]}
                     onSelect={(item) => {
                       onContinentSelect(item);
                       setMobileMenuOpen(false);
@@ -95,7 +120,7 @@ const MainNavbar = ({
             >
               <FontAwesomeIcon icon={faArrowLeft} size="lg" />
             </button>
-            
+
             <form className="flex-grow-1" onSubmit={handleSearch}>
               <input
                 type="text"
