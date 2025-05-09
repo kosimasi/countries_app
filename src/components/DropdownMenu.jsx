@@ -14,7 +14,7 @@ const DropdownMenu = ({ title, items, themeMode, onSelect, mobileMode }) => {
       onMouseLeave={!isMobile ? () => setIsOpen(false) : undefined}
     >
       <button
-        className={`btn ${themeMode === "dark" ? "btn-dark" : "btn-light"} w-100 text-start`}
+        className={`btn ${themeMode === "dark" ? "btn-dark" : "btn-primary"} w-100 text-start`}
         onClick={isMobile ? () => setIsOpen(!isOpen) : undefined}
         aria-expanded={isOpen}
       >

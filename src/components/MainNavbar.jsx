@@ -4,7 +4,7 @@ import {
   faSearch,
   faBars,
   faTimes,
-  faArrowLeft,
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import DropdownMenu from "./DropdownMenu";
 import ThemeToggle from "./ThemeToggle";
@@ -51,7 +51,7 @@ const MainNavbar = ({
 
               <button
                 className={`btn ${
-                  themeMode === "dark" ? "btn-dark" : "btn-light"
+                  themeMode === "dark" ? "btn-dark" : "btn-primary"
                 } ms-2 me-auto`}
                 onClick={toggleSearchDrawer}
               >
@@ -118,7 +118,7 @@ const MainNavbar = ({
               className="btn btn-link text-light me-2"
               onClick={toggleSearchDrawer}
             >
-              <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+              <FontAwesomeIcon icon={faXmark} size="lg" />
             </button>
 
             <form className="flex-grow-1" onSubmit={handleSearch}>
