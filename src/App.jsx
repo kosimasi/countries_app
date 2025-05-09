@@ -4,8 +4,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import HomePage from './pages/homePage/HomePage';
-import CountriesList from './pages/countries/CountriesList';
-import CountryDetails from './pages/countries/CountryDetails';
+import CountriesList from './pages/countryList/CountryList';
+import CountryDetails from './pages/countryDetails/CountryDetails';
 
 const queryClient = new QueryClient();
 

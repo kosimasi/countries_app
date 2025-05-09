@@ -16,7 +16,7 @@ import Loader from "../../components/Loader";
 import ErrorMessage from "../../components/ErrorMessage";
 import { useSelector } from "react-redux";
 import { selectThemeMode } from "../../features/theme/ThemeSlice";
-import "./countries.css";
+import "./countryList.css";
 
 
 // Constants
