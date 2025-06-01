@@ -7,7 +7,7 @@
   .hero-section {
     position: relative;
     height: 100vh;
-    background-image: url('/countries.webp');
+    background-image: url('/new.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -111,7 +111,8 @@
   }
   
   .cta-button:hover {
-    background-color: #45a049;
+    background-color: #f0f6f0;
+    /* text:black; */
     transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
