@@ -2,7 +2,7 @@
 .country-details-container {
   padding: 2rem;
   margin: 0 auto;
-  background-color: #dcf1f1;
+  background-color:#FBF5DF;
 }
 .country-details-container.dark {
   background-color: #2c2b2b;
@@ -42,7 +42,7 @@
 }
 
 .country-header {
-  background-color: #fff;
+  background-color: #f8f9fa;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);

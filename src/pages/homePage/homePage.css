@@ -99,9 +99,9 @@
 
   .cta-button {
     display: inline-block;
-    padding: 15px 40px;
-    background-color: #4CAF50;
-    color: white;
+    padding: 10px 25px;
+    background-color: #fafafa;
+    color:  rgba(7, 90, 174, 0.8);
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
@@ -111,9 +111,8 @@
   }
   
   .cta-button:hover {
-    background-color: #f0f6f0;
-    /* text:black; */
-    transform: translateY(-3px);
+    background-color:  rgba(36, 47, 58, 0.8);
+    color: #fafafa;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
   
@@ -136,7 +135,7 @@
   }
   
   .info-card {
-    background: rgb(54, 52, 52);
+    background:  rgba(36, 47, 58, 0.8);
     border-radius: 10px;
     padding: 30px;
     text-align: center;

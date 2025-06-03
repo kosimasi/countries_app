@@ -28,8 +28,8 @@ const MainNavbar = ({
   return (
     <nav
       className={`navbar navbar-expand-lg ${
-        themeMode === "dark" ? "navbar-dark bg-dark" : "navbar-light bg-primary"
-      } sticky-top`}
+        themeMode === "dark" ? "navbar-dark bg-dark" : ""
+      } sticky-top main-navbar`}
     >
       <div className="container-fluid">
         {!isSearchOpen ? (
@@ -51,8 +51,8 @@ const MainNavbar = ({
 
               <button
                 className={`btn ${
-                  themeMode === "dark" ? "btn-dark" : "btn-primary"
-                } ms-2 me-auto`}
+                  themeMode === "dark" ? "btn-dark" : ""
+                } ms-2 me-auto nav-btn`}
                 onClick={toggleSearchDrawer}
               >
                 <FontAwesomeIcon icon={faSearch} className="me-2" />
