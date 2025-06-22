@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import "./homePage.css";
 
@@ -16,14 +17,14 @@ function HomePage() {
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="nav-link">
+                  <Link href="" className="nav-link">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/pract" className="nav-link">
-                    Practice
-                  </a>
+                  <Link href="" className="nav-link">
+                    About
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -35,9 +36,9 @@ function HomePage() {
             <p className="lead mb-4">
               Explore comprehensive information about every country on Earth
             </p>
-            <a href="countries" className="cta-button">
+              <Link to="/countries" className="cta-button">
               Start Exploring
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -77,9 +78,9 @@ function HomePage() {
         <div className="container">
           <h2>Ready to Explore?</h2>
           <p>Start your journey through the world's countries now</p>
-          <a href="/countries" className="cta-button">
+          <Link href="/countries" className="cta-button">
             Browse All Countries
-          </a>
+          </Link>
         </div>
       </section>
 
