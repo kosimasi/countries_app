@@ -17,12 +17,12 @@ function HomePage() {
                   </a>
                 </li>
                 <li>
-                  <Link href="" className="nav-link">
+                  <Link to="" className="nav-link">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="" className="nav-link">
+                  <Link to="" className="nav-link">
                     About
                   </Link>
                 </li>
@@ -78,7 +78,7 @@ function HomePage() {
         <div className="container">
           <h2>Ready to Explore?</h2>
           <p>Start your journey through the world's countries now</p>
-          <Link href="/countries" className="cta-button">
+          <Link to="/countries" className="cta-button">
             Browse All Countries
           </Link>
         </div>
