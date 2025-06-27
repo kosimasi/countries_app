@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const DropdownMenu = ({ title, items, themeMode, onSelect, mobileMode }) => {
+const DropdownMenu = ({
+  title,
+  items,
+  themeMode,
+  onSelect,
+  mobileMode,
+  basePath,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Determine if we're in mobile mode based on screen width
@@ -38,7 +45,8 @@ const DropdownMenu = ({ title, items, themeMode, onSelect, mobileMode }) => {
             className={`dropdown-item ${
               themeMode === "dark" ? "text-light" : "text-dark"
             }`}
-            to="/countries"
+            // to="/countries"
+            to={basePath ? `${basePath}/${item.toLowerCase()}` : "/countries"}
             onClick={() => {
               onSelect(item);
               setIsOpen(false);

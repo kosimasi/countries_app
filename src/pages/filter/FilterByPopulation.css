@@ -1,0 +1,26 @@
+.filter-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .country-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .country-flag {
+    width: 40px;
+    height: 25px;
+    border: 1px solid #ccc;
+  }
+  
+  .country-index {
+    width: 30px;
+    text-align: right;
+  }
+  

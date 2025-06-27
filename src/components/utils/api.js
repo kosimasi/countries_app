@@ -1,6 +1,10 @@
 import axios from "axios";
-// The API endpoint am using now requires all fields query parameter.
-// const API_URL = "https://restcountries.com/v3.1/all";
+/**
+ * Fetches all countries with specified fields from the API
+ * @returns {Promise<Array>} Array of country objects
+ * @throws {Error} If the request fails
+ */
+
 const API_URL =
   "https://restcountries.com/v3.1/all?fields=name,flags,region,subregion,population,area,languages,currencies,capital,cca3";
 

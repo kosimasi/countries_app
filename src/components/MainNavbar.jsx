@@ -97,15 +97,10 @@ const MainNavbar = ({
                     items={[
                       "Population",
                       "Area",
-                      "Region",
                       "Subregion",
                       "Language",
-                      "Currency",
                     ]}
-                    onSelect={(item) => {
-                      onContinentSelect(item);
-                      setMobileMenuOpen(false);
-                    }}
+                      basePath="/filter"
                     mobileMode={!mobileMenuOpen}
                   />
                 </div>
