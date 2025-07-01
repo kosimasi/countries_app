@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const DropdownMenu = ({
   title,
@@ -10,10 +10,8 @@ const DropdownMenu = ({
   basePath,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   // Determine if we're in mobile mode based on screen width
   const isMobile = window.innerWidth < 992;
-
   return (
     <div
       className={`dropdown ${
@@ -45,8 +43,7 @@ const DropdownMenu = ({
             className={`dropdown-item ${
               themeMode === "dark" ? "text-light" : "text-dark"
             }`}
-            // to="/countries"
-            to={basePath ? `${basePath}/${item.toLowerCase()}` : "/countries"}
+            to={basePath ? `/${item.toLowerCase()}` : "/countries"}
             onClick={() => {
               onSelect(item);
               setIsOpen(false);
@@ -54,6 +51,7 @@ const DropdownMenu = ({
           >
             {item === "all" ? "All" : item}
           </Link>
+
         ))}
       </div>
     </div>

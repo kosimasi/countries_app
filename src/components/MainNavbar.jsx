@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import {
   faSearch,
   faBars,
@@ -90,7 +91,6 @@ const MainNavbar = ({
                     }}
                     mobileMode={!mobileMenuOpen}
                   />
-
                   <DropdownMenu
                     title="Filter"
                     themeMode={themeMode}
@@ -100,7 +100,7 @@ const MainNavbar = ({
                       "Subregion",
                       "Language",
                     ]}
-                      basePath="/filter"
+                      basePath="/"
                     mobileMode={!mobileMenuOpen}
                   />
                 </div>

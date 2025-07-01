@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/countries" element={<CountriesList />} />
           <Route path="/country/:cca3" element={<CountryDetails />} />
-          <Route path="/filter/:filterType" element={<FilterByPopulation />} />
+          <Route path="/:filterType" element={<FilterByPopulation />} />
         </Routes>
       </Router>
     </QueryClientProvider>
