@@ -17,7 +17,7 @@ A simple React web application that displays information about countries using a
 
 🔗 Live Demo
 
-[View the deployed site on Vercel](https://vercel-project.vercel.app)  
+[View the deployed site on Vercel](https://countries-app-rust-mu.vercel.app/)  
 
 
  🛠 Tech Stack
