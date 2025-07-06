@@ -116,16 +116,5 @@
   }
 }
 
-/* Theme specific styles */
-.dark .dropdown-menu {
-  background-color: #343a40;
-  border-color: #495057;
-}
 
-.dark .dropdown-item {
-  color: #f8f9fa;
-}
 
-.dark .dropdown-item:hover {
-  background-color: #495057;
-}

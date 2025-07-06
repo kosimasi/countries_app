@@ -22,7 +22,7 @@ const DropdownMenu = ({
     >
       <button
         className={`btn ${
-          themeMode === "dark" ? "btn-dark" : ""
+          themeMode === "dark" ? "bg-dark" : ""
         } w-100 text-start nav-btn`}
         onClick={isMobile ? () => setIsOpen(!isOpen) : undefined}
         aria-expanded={isOpen}

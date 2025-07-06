@@ -52,7 +52,7 @@ const MainNavbar = ({
 
               <button
                 className={`btn ${
-                  themeMode === "dark" ? "btn-dark" : ""
+                  themeMode === "dark" ? "bg-dark" : ""
                 } ms-2 me-auto nav-btn`}
                 onClick={toggleSearchDrawer}
               >
@@ -92,7 +92,7 @@ const MainNavbar = ({
                     mobileMode={!mobileMenuOpen}
                   />
                   <DropdownMenu
-                    title="Filter"
+                    title="Arrange"
                     themeMode={themeMode}
                     items={[
                       "Population",
