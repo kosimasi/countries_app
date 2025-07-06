@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import {
   faSearch,
   faBars,
@@ -78,7 +77,6 @@ const MainNavbar = ({
                     title="Continent"
                     themeMode={themeMode}
                     items={[
-                      "all",
                       "Africa",
                       "Americas",
                       "Asia",
