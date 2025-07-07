@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchCountries } from "../../components/utils/api";
 import { useParams } from "react-router-dom";
 import PaginationControls from "../../components/PaginationControls";
-import "./FilterByPopulation.css"; 
+// import "./FilterByPopulation.css"; 
 
 
 const FilterByPopulation = () => {
