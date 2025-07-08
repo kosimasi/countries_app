@@ -24,7 +24,7 @@
   }
   
   .navbar-toggler:hover {
-    background-color: #245f9d;
+    background-color:  #1c3751;
     border-color: #000;
   }
   
@@ -116,5 +116,18 @@
   }
 }
 
+/* Theme specific styles */
+.dark .dropdown-menu {
+  background-color: #343a40;
+  border-color: #495057;
+}
+
+.dark .dropdown-item {
+  color: #f8f9fa;
+}
+
+.dark .dropdown-item:hover {
+  background-color: #495057;
+}
 
 

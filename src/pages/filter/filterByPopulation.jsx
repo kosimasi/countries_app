@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchCountries } from "../../components/utils/api";
 import { useParams } from "react-router-dom";
 import PaginationControls from "../../components/PaginationControls";
-// import "./FilterByPopulation.css"; 
+import "./FilterByPopulation.css"; 
 
 
 const FilterByPopulation = () => {
@@ -65,7 +65,7 @@ const FilterByPopulation = () => {
             <img
               src={country.flag}
               alt={`${country.name} flag`}
-              className="country-flag me-3"
+              className="country-flag-small me-3"
             />
             <span className="flex-grow-1">{country.name}</span>
             <span className="fw-bold">
